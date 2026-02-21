@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 14% 96%;
+    --foreground: 20 8% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 8% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 8% 18%;
+
+    --primary: 12 58% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 97 12% 57%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 30 14% 94%;
+    --muted-foreground: 20 5% 35%;
+
+    --accent: 97 12% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 12 53% 52%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 12 58% 60%;
+
+    --radius: 0.5rem;
+
+    /* Custom design system */
+    --terracotta-50: #FBF4F2;
+    --terracotta-100: #F5E5E0;
+    --terracotta-500: #D4735E;
+    --terracotta-600: #C05D47;
+    --terracotta-700: #A04937;
+
+    --sage-50: #F6F7F5;
+    --sage-100: #E8EBE6;
+    --sage-500: #8B9D83;
+    --sage-600: #6F8267;
+    --sage-700: #566650;
+
+    --warm-gray-50: #F9F8F6;
+    --warm-gray-100: #F5F3F0;
+    --warm-gray-200: #E8E5E1;
+    --warm-gray-300: #D1CBC3;
+    --warm-gray-800: #4A4540;
+    --warm-gray-900: #2E2E2E;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-warm-gray-100 text-warm-gray-900 font-body;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+  }
+}
+
+/* Pattern overlay for atmosphere */
+.pattern-overlay::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url('/images/bg-pattern.png');
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-terracotta-500 text-white px-8 py-3.5 rounded-lg font-semibold transition-all duration-200;
+}
+.btn-primary:hover {
+  @apply bg-terracotta-600 -translate-y-0.5;
+  box-shadow: 0 8px 24px rgba(212, 115, 94, 0.25);
+}
+
+.btn-secondary {
+  @apply bg-transparent text-terracotta-500 border-2 border-terracotta-500 px-7 py-3 rounded-lg font-semibold transition-all duration-200;
+}
+.btn-secondary:hover {
+  @apply bg-terracotta-50;
+}
+
+.btn-ghost {
+  @apply text-sage-600 underline underline-offset-4 decoration-2 transition-colors duration-200;
+}
+.btn-ghost:hover {
+  @apply text-sage-700;
+}
+
+/* Story card */
+.story-card {
+  @apply bg-white border border-warm-gray-200 rounded-xl p-8;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* Mentor quote card */
+.mentor-quote-card {
+  @apply bg-warm-gray-50 pl-6 pr-6 py-6 rounded-r-lg;
+  border-left: 4px solid var(--terracotta-500);
+}
+
+/* Form input styles */
+.form-input {
+  @apply bg-white border-2 border-warm-gray-300 rounded-lg px-4 py-3 text-base text-warm-gray-900 transition-all duration-200;
+}
+.form-input:focus {
+  @apply border-terracotta-500 outline-none;
+  box-shadow: 0 0 0 4px rgba(212, 115, 94, 0.1);
+}
+
+/* Section backgrounds */
+.section-hero {
+  background: linear-gradient(135deg, var(--warm-gray-50) 0%, var(--terracotta-50) 100%);
+}
+.section-stories {
+  @apply bg-white;
+}
+.section-how {
+  @apply bg-sage-50;
+}
+.section-pricing {
+  @apply bg-white;
+}
+.section-faq {
+  @apply bg-warm-gray-50;
+}
+
+/* Container */
+.container-custom {
+  @apply max-w-[1200px] mx-auto px-6;
+}
+
+@media (max-width: 768px) {
+  .container-custom {
+    @apply px-4;
+  }
+}
+
+/* Section padding */
+.section-padding {
+  @apply py-24;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    @apply py-16;
+  }
+}
