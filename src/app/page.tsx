@@ -84,7 +84,7 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <Image
-                src="/images/hero-journey.png"
+                src="/hero-journey.png"
                 alt="A winding path from corporate buildings to an open creative landscape"
                 width={500}
                 height={500}
