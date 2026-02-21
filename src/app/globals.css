@@ -73,7 +73,7 @@
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url('/images/bg-pattern.png');
+  background-image: url('/bg-pattern.png');
   opacity: 0.03;
   pointer-events: none;
   z-index: -1;
